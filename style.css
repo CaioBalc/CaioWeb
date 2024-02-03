@@ -1,0 +1,93 @@
+body{
+    background-color: #0074CC;
+    font-family: Arial, Helvetica;
+    max-width: 600px;
+    margin: auto;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px;
+    margin: 0px;
+}
+
+h2{
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-size: 26px;
+    color: #fff;
+    padding: 10px;
+    margin: 0px;
+}
+
+h3{
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 25px;
+}
+
+.centralizar{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-decoration: none;
+    margin: 15px;
+    padding: 10px;
+    background-color: #1F6499;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+}
+.button:hover{
+    background-color: #294B66;
+}
+
+.constuctor{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 26px;
+    padding-top: 25px;
+    padding-top: 25px;
+    margin: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.border{
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    padding-left: 10px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+}
