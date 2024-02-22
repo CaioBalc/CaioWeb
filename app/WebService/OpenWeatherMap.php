@@ -44,7 +44,7 @@ class OpenWeatherMap{
     private function get($resource, $params = []){
         # Parâmetros adicionais
         $params["units"] = "metric";
-        $params["lang"] = "pt-br";
+        $params["lang"] = "pt";
         $params["appid"] = $this->apiKey;
         
         # EndPoint
@@ -68,11 +68,11 @@ class OpenWeatherMap{
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         # Print HTTP Status Code
-        echo "HTTP Status Code: " . $httpcode . "\n";
+        #echo "HTTP Status Code: " . $httpcode . "\n";
 
         # Print Full Response
-        echo "Full Response: \n";
-        print_r(json_decode($response, true));
+        #echo "Full Response: \n";
+        #print_r(json_decode($response, true));
         #Fim HTTP
 
         # Fecha conexão Curl

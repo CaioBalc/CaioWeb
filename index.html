@@ -33,8 +33,47 @@
         <a class="button" href="https://www.facebook.com/caio.balczarek?mibextid=LQQJ4d" target="blank"><img src="images/Facebook_Icon.png" alt="Facebook_Icon" width=50px , height=50px><i>Facebook</i></a>
         <a class="button" href="https://www.linkedin.com/in/caio-balczarek-7a2b20222" target="blank"><img src="images/LinkedIn_Icon.png" alt="LinkedIn_Icon" width=50px , height=50px><i>LinkedIn</i></a>
         <a class="button" href="https://github.com/CaioBalc" target="blank"><img src="images/GitHub_Icon.png" alt="GitHub_Icon" width=50px , height=50px><i>GitHub</i></a>
-    
     </div>
+
+    <!-- API clima -->
+    <div class='climaImagem'>
+        <p id='climaTitulo' class='climaTitulo'></p>
+        <p id='climaTexto' class='climaTexto'></p>
+    </div>
+
+    <script>
+        // Chave da API
+        var apiKey = 'd4696918d77ab48b666774803bd4cc53';
+
+        // Cidade e UF
+        var cidade = 'Santa Cruz do Sul';
+        var uf = 'RS';
+
+        // URL da API
+        var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cidade},${uf},br&appid=${apiKey}&units=metric&lang=pt_br`;
+
+        // Função para buscar os dados do clima
+        function buscarClima() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('climaTitulo').innerText = `Previsão do Tempo para \n${cidade}/${uf}`;
+                    document.getElementById('climaTexto').innerHTML = 
+                        `<b>Temperatura: </b>${data.main.temp}ºC<br>` +
+                        `<b>Sensação Térmica: </b>${data.main.feels_like}ºC<br>` +
+                        `<b>Clima: </b>${ucfirst(data.weather[0].description)}`;
+                })
+                .catch(error => console.error('Erro:', error));
+                
+            // Função para fazer a primeira letra de uma string ficar maiúscula
+            function ucfirst(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        }
+
+        // Buscar os dados do clima ao carregar a página
+        window.onload = buscarClima;
+    </script>
     
     <!-- Caio Construtor -->
     <p class="constuctor">Site em desenvolvimento.<br>Aguarde por mais!</p>
